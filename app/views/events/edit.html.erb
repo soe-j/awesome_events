@@ -1,7 +1,7 @@
 <% now = Time.zone.now %>
 
 <div class="page-header">
-  <h1>イベント作成</h1>
+  <h1>イベント情報編集</h1>
 </div>
 
 <%= form_for(@event, class: 'form-horizontal', role: 'form') do |f| %>
@@ -32,6 +32,14 @@
     <%= f.file_field :event_image %>
     <%= f.hidden_field :event_image_cache %>
   </div>
+  <% if @event.event_image? %>
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :remove_event_image %>
+        画像を削除する
+      </label>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= f.label :start_time %>
     <div>
@@ -49,5 +57,5 @@
     <%= f.text_field :content, class: 'form-control', row: 10 %>
   </div>
 
-  <%= f.submit '作成', class: 'btn btn-default', data: { disable_with: '作成中...' } %>
+  <%= f.submit '更新', class: 'btn btn-default', data: { disable_with: '更新中...' } %>
 <% end %>
