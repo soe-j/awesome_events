@@ -51,3 +51,7 @@ gem 'mini_magick', '~> 3.7.0'
 group :development, :test do
   gem 'rspec-rails'
 end
+
+group :test do
+  gem 'shoulda-matchers'
+end
