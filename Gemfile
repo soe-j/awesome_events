@@ -50,6 +50,7 @@ gem 'mini_magick', '~> 3.7.0'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do
