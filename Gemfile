@@ -30,7 +30,16 @@ gem 'pry-rails',     group: [:development, :test]
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+group :production do
+  gem 'unicorn'
+end
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
